@@ -8,11 +8,11 @@ def seed_users():
     # print('////')
     # print(fake.profile()['mail'])
     demo = User(
-        username='Demo', email='demo@aa.io', password='password', image_url="https://picsum.photos/200/300?random=1")
+        username='Demo', email='demo@aa.io', password='password', image_url="https://picsum.photos/id/20/200/300")
     marnie = User(
-        username='marnie', email='marnie@aa.io', password='password', image_url="https://picsum.photos/200/300?random=1")
+        username='marnie', email='marnie@aa.io', password='password', image_url="https://picsum.photos/id/25/200/300")
     bobbie = User(
-        username='bobbie', email='bobbie@aa.io', password='password', image_url="https://picsum.photos/200/300?random=1")
+        username='bobbie', email='bobbie@aa.io', password='password', image_url="https://picsum.photos/id/30/200/300")
     db.session.add(demo)
     db.session.add(marnie)
     db.session.add(bobbie)
@@ -23,7 +23,7 @@ def seed_users():
             username= f'{fake.first_name()}{x}',
             email= fake.profile()['mail'],
             password=f'password{x}',
-            image_url="https://picsum.photos/200/300?random=1"
+            image_url=f"https://picsum.photos/id/{10+x*3}/200/300"
         )
         db.session.add(additionalUser)
 

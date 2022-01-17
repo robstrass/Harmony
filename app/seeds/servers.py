@@ -13,7 +13,7 @@ def seed_servers():
     db.session.add(demoServer)
     db.session.commit()
 
-     # adds users 1 thru 5 to "App Academy Chat"
+    # adds users 1 thru 5 to "App Academy Chat"
     for y in range(1, 6):
         demoMember = Member(
             user_id=y,
@@ -22,30 +22,12 @@ def seed_servers():
         db.session.add(demoMember)
         db.session.commit()
 
-    demoPrivateServer = Server(
-        name="Boas Private Chat",
-        image_url="https://www.hospitalveterinariglories.com/wp-content/uploads/2019/11/19-11-27-boa-constrictor.jpg",
-        private=True,
-        owner_id=1
-    )
-    db.session.add(demoPrivateServer)
-    db.session.commit()
-
-    # adds users 1 thru 5 to "Boas Private Chat"
-    for z in range(1, 6):
-        demoMember = Member(
-            user_id=z,
-            server_id=2
-        )
-        db.session.add(demoMember)
-        db.session.commit()
-
-    for x in range(3, 16):
+    for x in range(2, 16):
         random_user_id = db.session.query(User.id).order_by(
-                func.random()).first()[0]
+            func.random()).first()[0]
         seed_server = Server(
             name=f'Server {x}',
-            image_url="https://picsum.photos/200/300?random=1",
+            image_url=f"https://picsum.photos/id/{x}/200/300",
             private=False,
             owner_id=random_user_id
         )
