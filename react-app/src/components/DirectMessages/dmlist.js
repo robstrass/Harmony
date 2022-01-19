@@ -4,12 +4,13 @@ import style from "./directmessages.module.css";
 import * as serverActions from "../../store/servers";
 import { useDispatch, useSelector } from "react-redux";
 import Member from "../Members/member";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import UserDetails from "../ChannelList/UserDetails";
 export default function DMList() {
   const dispatch = useDispatch();
   const servers = useSelector((state) => state.servers);
   const session = useSelector((state) => state.session);
+  const history = useHistory();
 
   let privateServers;
   if (servers) {
@@ -37,6 +38,8 @@ export default function DMList() {
     function removeDm(e, server) {
       e.preventDefault();
       dispatch(serverActions.deleteServerThunk(server?.id));
+
+      history.push('/servers/@me');
     }
 
     if (otherMember) {
