@@ -9,7 +9,7 @@ import DMList from "../DirectMessages/dmlist";
 import arrow from "./assets/discord-arrow.svg";
 
 import CreateServer from "../CreateServer";
-import CreateChannel from '../CreateChannel';
+import CreateChannel from "../CreateChannel";
 import JoinServer from "../JoinServer";
 
 import Members from "../Members";
@@ -28,6 +28,9 @@ export default function Servers() {
   const [serverActive, setServerActive] = useState(false);
   const [createNewServer, setCreateNewServer] = useState(false);
   const [joinServer, setJoinServer] = useState(false);
+  const [githubs, setGithubs] = useState(false);
+  const [linkedIns, setLinkedIns] = useState(false);
+  const [websites, setWebsites] = useState(false);
 
   useEffect(() => {
     socket = io();
@@ -170,7 +173,7 @@ export default function Servers() {
     );
   }
 
-  if (!session.user) return <Redirect to = '/' />;
+  if (!session.user) return <Redirect to="/" />;
 
   return (
     <main className={style.main}>
@@ -217,7 +220,14 @@ export default function Servers() {
               "/servers/:serverId/:channelId",
             ]}
           >
-            <Header />
+            <Header
+              setGithubs={setGithubs}
+              setLinkedIns={setLinkedIns}
+              setWebsites={setWebsites}
+              githubs={githubs}
+              linkedIns={linkedIns}
+              websites={websites}
+            />
           </Route>
         </Switch>
         <Switch>
@@ -250,7 +260,11 @@ export default function Servers() {
               "/servers/@me/:serverId/:channelId",
             ]}
           >
-            <Members />
+            <Members
+              githubs={githubs}
+              linkedIns={linkedIns}
+              websites={websites}
+            />
           </Route>
         </Switch>
       </div>

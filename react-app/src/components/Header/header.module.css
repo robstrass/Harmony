@@ -49,7 +49,7 @@
 }
 .searchIcon {
   position: absolute;
-  right: 80px;
+  right: 45px;
   height: 20px;
 }
 .searchIcon > svg {
@@ -133,4 +133,18 @@
 }
 .right input:placeholder-shown ~ div {
   visibility: hidden;
+}
+.right i {
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  color: rgb(142, 146, 151);
+}
+.right i:hover {
+  cursor: pointer;
+}
+.help {
+  color: rgb(142, 146, 151);
+  display: grid;
+  align-items: center;
 }

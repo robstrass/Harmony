@@ -81,3 +81,21 @@
   visibility: visible;
   align-items: flex-start;
 }
+.creatorInfo {
+  display: grid;
+  justify-items: center;
+  grid-template-rows: repeat(3, max-content);
+  row-gap: 3rem;
+}
+.creatorInfo > div {
+  display: grid;
+  place-items: center;
+  color: white;
+  font-family: Ginto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  row-gap: 0.5rem;
+}
+.creatorInfo > div i {
+  font-size: 3rem;
+  color: rgb(142, 146, 151);
+}
+/* .creatorInfo > div h3 */
