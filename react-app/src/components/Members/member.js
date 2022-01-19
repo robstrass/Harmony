@@ -50,12 +50,15 @@ export default function Member({ member, owner_id, card }) {
 
         {card && (
           <div className={style.card}>
-            <img src={image_url} alt="" />
-            <h3>{username}</h3>
+            <div className={style.membersInnerDiv}>
+              <img src={image_url} alt="" />
+              <h3>{username}</h3>
+            </div>
             {session.user.id !== id && (
               <button
+                className={style.memberDMButton}
                 onClick={messageCheck}
-              >DM BUTTON</button>
+              >Message</button>
             )}
           </div>
         )}

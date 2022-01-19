@@ -54,20 +54,36 @@
   visibility: hidden;
   cursor: auto;
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
+  align-items: center !important;
   border-radius: 5px;
+  gap: 2rem;
 }
-.card > img {
+.card img {
   height: 80px;
   width: 80px;
   border-radius: 50%;
   margin: 10px 0;
 }
-.card > h3 {
+.card h3 {
   color: rgb(207, 207, 207);
   font-size: 1.5rem;
 }
+
+.membersInnerDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.memberDMButton {
+  border-radius: 4px;
+  color: #fff;
+  background-color: #5a6aef;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
 .div1:focus-visible,
 .div1:focus-within,
 .div1:focus {
