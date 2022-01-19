@@ -32,7 +32,6 @@ export default function UserList() {
     if (hasMember(member)) return;
     const formData = new FormData();
 
-    // formData.append("image_url", imageUrl);
     formData.append("name", "Your Direct Message");
     formData.append("private", true);
     formData.append("owner_id", session.user.id);

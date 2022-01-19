@@ -56,10 +56,8 @@ export default function CreateServer({ setCreateNewServer, setServerActive }) {
     setCreateNewServer(false);
   };
 
-  // let oldSelection = '';
   const setImage = (e) => {
     let file = e.target.files[0];
-    // previewImg = file.name
     setImageUrl(e.target.files[0]);
     if (file) {
       setOldImageUrl(file);

@@ -97,10 +97,9 @@ export const getServersThunk = () => async (dispatch) => {
 };
 
 export const postServerThunk = (server) => async (dispatch) => {
-  // const { name, image_url, isPrivate } = server;
   const response = await fetch(`/api/servers/`, {
     method: "POST",
-    body: server
+    body: server,
   });
   const data = await response.json();
   dispatch(postServer(data));
@@ -108,11 +107,10 @@ export const postServerThunk = (server) => async (dispatch) => {
 };
 
 export const editServerThunk = (server) => async (dispatch) => {
-  // const { name, image_url, id } = server;
-  const id = server.get('id');
+  const id = server.get("id");
   const response = await fetch(`/api/servers/${id}`, {
     method: "PUT",
-    body: server
+    body: server,
   });
   const data = await response.json();
   dispatch(editServer(data));
