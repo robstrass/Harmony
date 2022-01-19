@@ -44,7 +44,8 @@
   grid-template-rows: 1fr auto;
   gap: 0px 0px;
   grid-template-areas:
-    "image name date options"
+    "date date date date"
+    "image name name options"
     "image text text text";
   /* width: 100%; */
 }
@@ -77,6 +78,7 @@
   font-size: 13px;
   grid-area: date;
   align-self: center;
+  text-align: center;
 }
 .message_container:hover .message_options {
   visibility: visible;
@@ -219,7 +221,8 @@
   grid-template-rows: 1fr 1fr;
   border: 1px solid #292b30 !important;
   grid-template-areas:
-    "image name date"
+    "date date date"
+    "image name name"
     "image text text";
   padding: 10px;
   box-shadow: 2px 2px 2px #292b30;
@@ -236,6 +239,7 @@
 
 .owner_username {
   grid-area: name;
+  font-weight: 600;
 }
 
 .message_created_at {
