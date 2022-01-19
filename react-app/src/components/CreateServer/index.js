@@ -60,8 +60,6 @@ export default function CreateServer({ setCreateNewServer, setServerActive }) {
   const setImage = (e) => {
     let file = e.target.files[0];
     // previewImg = file.name
-    console.log("file", file);
-    console.log("oldfile", oldImageUrl);
     setImageUrl(e.target.files[0]);
     if (file) {
       setOldImageUrl(file);

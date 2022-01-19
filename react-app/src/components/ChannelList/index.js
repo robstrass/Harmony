@@ -16,8 +16,6 @@ const ChannelList = () => {
   const server = useSelector((state) => state.servers?.[serverId]);
   let channels = useSelector((state) => state.servers?.[serverId]?.channels);
 
-  console.log("CHANNEL ID!!!-----: ", channelId);
-
   const [channelModalActive, setChannelModalActive] = useState(false);
   const [editChannelModalActive, setEditChannelModalActive] = useState(false);
 
@@ -64,19 +62,8 @@ const ChannelList = () => {
     </svg>
   );
 
-  // const channelSettings = document.getElementById("editChannelModal");
-
   let newChannelBtn;
   let editChannelBtn;
-  // let editBtn;
-
-  // const openChannelEdit = () => {
-  //   if (!channelSettings?.classList.contains(style.channelSettingsBgActive)) {
-  //     console.log('made it to channel edit!!!');
-  //     channelSettings?.classList.add('channelSettingsBgActive');
-  //     <EditChannelModal />
-  //   }
-  // };
 
   if (+sessionUser?.id === +server?.owner_id) {
     newChannelBtn = (
@@ -89,8 +76,6 @@ const ChannelList = () => {
         {newChannelIcon}
       </div>
     );
-
-    // let editBtn = document.getElementById(`channelEditBtn-${channelId}`);
 
     editChannelBtn = (
       <div

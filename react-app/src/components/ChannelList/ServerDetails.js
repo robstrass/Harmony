@@ -16,18 +16,6 @@ const ServerDetails = () => {
     const [serverSettingsModal, setServerSettingsModal] = useState(false);
     const [inviteActive, setInviteActive] = useState(false);
 
-    // useEffect(() => {
-    //     dispatch(serverActions.getServersThunk())
-    // }, [dispatch]);
-
-    // if (JSON.stringify(channels) === '{}') {
-    //     dispatch(serverActions.getChannelsThunk(+serverId))
-    // }
-    // console.log('SESSION USER----: ', +sessionUser.id)
-    // console.log('SERVER OWNER----: ', +server?.owner_id)
-
-
-
     const serverSettingsMenu = document.getElementById(`serverSettingsMenu-${serverId}`);
     const serverMenuDropdown = document.getElementById('serverMenuDropdown');
     const serverMenuIcon = document.getElementById(`serverMenuIcon-${serverId}`);
@@ -140,10 +128,8 @@ const ServerDetails = () => {
     const handleServerMenuDropdown = () => {
         if (serverSettingsModal === true) {
             setServerSettingsModal(false)
-            console.log(serverSettingsModal)
         } else {
             setServerSettingsModal(true)
-            console.log(serverSettingsModal)
         }
     }
 

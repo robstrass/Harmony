@@ -10,7 +10,6 @@ export default function ChannelMessages() {
   const { serverId, channelId } = useParams();
 
   const server = useSelector((state) => state.servers?.[serverId]);
-  console.log("serververvevrevr", server)
   const channel = server?.channels?.[channelId];
   let messages = useSelector(
     (state) => state.servers?.[serverId]?.channels?.[channelId]?.messages
@@ -24,7 +23,6 @@ export default function ChannelMessages() {
   });
   const [displayDeleteConfirm, setDisplayDeleteConfirm] = useState("");
   const dispatch = useDispatch();
-  console.log({ server, channelId });
   // SUBMIT NEW MESSAGE
   function messageSubmit(e) {
     e.preventDefault();

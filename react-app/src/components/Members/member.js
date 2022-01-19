@@ -15,7 +15,6 @@ export default function Member({ member, owner_id, card }) {
   const messageCheck = async () => {
     const serversArr = Object.values(servers);
     const rightServer = serversArr.find(server => server.private && server.members.includes(id));
-    console.log('xxxxxxx', rightServer, serversArr)
     if (rightServer) {
       history.push(`/servers/@me/${rightServer.id}/${Object.values(rightServer.channels)[0].id}`);
     } else {
