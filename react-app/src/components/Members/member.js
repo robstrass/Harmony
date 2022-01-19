@@ -2,6 +2,7 @@ import React, { useState, useEffect, useSelector, useDispatch } from "react-redu
 import { NavLink, useHistory } from "react-router-dom";
 import style from "./members.module.css";
 import * as serverActions from "../../store/servers";
+import profileImage from './assets/sample-profile-img.svg';
 
 export default function Member({ member, owner_id, card }) {
   const { image_url, id, username } = member;
@@ -42,7 +43,7 @@ export default function Member({ member, owner_id, card }) {
   return (
     <>
       <div className={style.div1} tabIndex="1">
-        <img src={image_url} alt="" />
+        <img src={image_url || profileImage} alt="" />
         <span>
           {username}
           {owner_id && id === owner_id && "👑"}
