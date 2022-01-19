@@ -10,6 +10,7 @@ export default function ChannelMessages() {
   const { serverId, channelId } = useParams();
 
   const server = useSelector((state) => state.servers?.[serverId]);
+  console.log("serververvevrevr", server)
   const channel = server?.channels?.[channelId];
   let messages = useSelector(
     (state) => state.servers?.[serverId]?.channels?.[channelId]?.messages
@@ -79,7 +80,7 @@ export default function ChannelMessages() {
   return (
     <div className={style.div1}>
       <div className={style.channel_messages_container}>
-        {server?.image_url && (
+        {server?.image_url && server.image_url !== 'strings' && (
           <img
             alt={"avatar"}
             className={style.server_image}
