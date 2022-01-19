@@ -205,9 +205,11 @@ a:hover p {
 }
 
 .detailsUsername {
+    font-family: Ginto,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #fff;
     font-size: 14px;
     line-height: 16px;
+    font-weight: 600;
 }
 
 .detailsId {

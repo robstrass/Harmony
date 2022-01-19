@@ -9,7 +9,6 @@ export default function ConfirmDeleteModal({setDisplayDeleteConfirm, message}) {
     const dispatch = useDispatch();
     const { serverId, channelId } = useParams();
     function handleMessageDelete() {
-        console.log(message.id)
         dispatch(serverActions.deleteMessageThunk({server_id: serverId, channel_id: channelId, message_id: message.id}))
         setDisplayDeleteConfirm('')
     }

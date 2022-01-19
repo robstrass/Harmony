@@ -23,7 +23,6 @@ export default function ChannelMessages() {
   });
   const [displayDeleteConfirm, setDisplayDeleteConfirm] = useState("");
   const dispatch = useDispatch();
-  console.log({ server, channelId });
   // SUBMIT NEW MESSAGE
   function messageSubmit(e) {
     e.preventDefault();
@@ -79,7 +78,7 @@ export default function ChannelMessages() {
   return (
     <div className={style.div1}>
       <div className={style.channel_messages_container}>
-        {server?.image_url && (
+        {server?.image_url && server.image_url !== 'strings' && (
           <img
             alt={"avatar"}
             className={style.server_image}

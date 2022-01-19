@@ -97,25 +97,20 @@ export const getServersThunk = () => async (dispatch) => {
 };
 
 export const postServerThunk = (server) => async (dispatch) => {
-  // const { name, image_url, isPrivate } = server;
-  console.log('image_url!!!', server)
   const response = await fetch(`/api/servers/`, {
     method: "POST",
-    body: server
+    body: server,
   });
   const data = await response.json();
-  console.log('after fetch', data)
   dispatch(postServer(data));
   return data;
 };
 
 export const editServerThunk = (server) => async (dispatch) => {
-  // const { name, image_url, id } = server;
-  const id = server.get('id');
-  console.log('inside thunk', id)
+  const id = server.get("id");
   const response = await fetch(`/api/servers/${id}`, {
     method: "PUT",
-    body: server
+    body: server,
   });
   const data = await response.json();
   dispatch(editServer(data));
@@ -397,7 +392,6 @@ export default function serverReducer(state = {}, action) {
       }
       return newState;
     case DELETE_MESSAGE:
-      console.log("****************", action.message);
       if (
         newState[action.message.server_id] &&
         newState[action.message.server_id].channels[action.message.channel_id]

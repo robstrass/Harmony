@@ -11,16 +11,6 @@ const UserSettingsModal = () => {
   const server = useSelector((state) => state.servers[serverId]);
   const sessionUser = useSelector((state) => state.session.user);
 
-  // useEffect(() => {
-  //     dispatch(serverActions.getServersThunk())
-  // }, [dispatch]);
-
-  // if (JSON.stringify(channels) === '{}') {
-  //     dispatch(serverActions.getChannelsThunk(+serverId))
-  // }
-  // console.log('SESSION USER----: ', +sessionUser.id)
-  // console.log('SERVER OWNER----: ', +server?.owner_id)
-
   const settingsAvatar = document.getElementById("settingsAvatar");
 
   if (!sessionUser?.image_url) {

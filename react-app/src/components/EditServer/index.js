@@ -14,16 +14,12 @@ const EditServer = ({setEditServerModalActive, setServerSettingsModal}) => {
     const [imageUrl, setImageUrl] = useState('');
     const [oldImageUrl, setOldImageUrl] = useState('');
 
-    console.log('IMAGE URL...', imageUrl);
-
     const handleSubmit = async (e) => {
-        console.log('image url', imageUrl)
         e.preventDefault();
         const formData = new FormData();
         formData.append('name', serverName);
         formData.append('image_url', imageUrl);
         formData.append('id', id);
-        console.log('xxxxxxxxxxxx', formData.get('name'));
 
         await dispatch(serverActions.editServerThunk(formData))
         await dispatch(serverActions.getChannelsThunk(id))

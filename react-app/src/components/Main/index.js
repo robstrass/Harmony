@@ -9,7 +9,7 @@ import DMList from "../DirectMessages/dmlist";
 import arrow from "./assets/discord-arrow.svg";
 
 import CreateServer from "../CreateServer";
-import CreateChannel from '../CreateChannel';
+import CreateChannel from "../CreateChannel";
 import JoinServer from "../JoinServer";
 
 import Members from "../Members";
@@ -28,6 +28,9 @@ export default function Servers() {
   const [serverActive, setServerActive] = useState(false);
   const [createNewServer, setCreateNewServer] = useState(false);
   const [joinServer, setJoinServer] = useState(false);
+  const [githubs, setGithubs] = useState(false);
+  const [linkedIns, setLinkedIns] = useState(false);
+  const [websites, setWebsites] = useState(false);
 
   useEffect(() => {
     socket = io();
@@ -83,41 +86,6 @@ export default function Servers() {
     setJoinServer(true);
   }
 
-  // function addChannelFunc() {
-  //   return (
-  //     <>
-  //       <div
-  //         className={style.serverModalBackground}
-  //         onClick={() => setChannelModalActive(false)}
-  //       ></div>
-  //       <div id='channelModal' className={style.channelModalContainer}>
-  //         <div className={style.serverModalWrapper}>
-  //             {/* <CreateChannel /> */}
-  //           <div className={style.title}>Create Text Channel</div>
-  //           <div
-  //             className={style.closeModal}
-  //             onClick={() => setChannelModalActive(false)}
-  //           >
-  //             <svg
-  //               className={style.closeX}
-  //               aria-hidden="false"
-  //               width="24"
-  //               height="24"
-  //               viewBox="0 0 24 24"
-  //             >
-  //               <path d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
-  //             </svg>
-  //           </div>
-  //           <div className={style.subheading}>
-  //             Your server is where you and your friends hang out. Make it yours
-  //             and start talking.
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-  // }
-
   function addServerFunc() {
     return (
       <>
@@ -170,7 +138,7 @@ export default function Servers() {
     );
   }
 
-  if (!session.user) return <Redirect to = '/' />;
+  if (!session.user) return <Redirect to="/" />;
 
   return (
     <main className={style.main}>
@@ -217,7 +185,14 @@ export default function Servers() {
               "/servers/:serverId/:channelId",
             ]}
           >
-            <Header />
+            <Header
+              setGithubs={setGithubs}
+              setLinkedIns={setLinkedIns}
+              setWebsites={setWebsites}
+              githubs={githubs}
+              linkedIns={linkedIns}
+              websites={websites}
+            />
           </Route>
         </Switch>
         <Switch>
@@ -250,7 +225,11 @@ export default function Servers() {
               "/servers/@me/:serverId/:channelId",
             ]}
           >
-            <Members />
+            <Members
+              githubs={githubs}
+              linkedIns={linkedIns}
+              websites={websites}
+            />
           </Route>
         </Switch>
       </div>

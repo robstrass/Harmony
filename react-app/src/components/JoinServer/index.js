@@ -34,12 +34,10 @@ export default function JoinServer({setServerActive, setJoinServer}) {
         if (serverLink) {
             const routeLinkArr = serverLink.split('https://harmony-io.herokuapp.com');
             const routeLink = routeLinkArr[1];
-            console.log('shorter link', routeLink);
 
             setJoinServer(false);
             history.push(`${routeLink}`);
         }
-        console.log('link', serverLink.split('https://harmony-io.herokuapp.com'));
     }
 
     return (

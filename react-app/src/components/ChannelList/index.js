@@ -16,8 +16,6 @@ const ChannelList = () => {
   const server = useSelector((state) => state.servers?.[serverId]);
   let channels = useSelector((state) => state.servers?.[serverId]?.channels);
 
-  console.log("CHANNEL ID!!!-----: ", channelId);
-
   const [channelModalActive, setChannelModalActive] = useState(false);
   const [editChannelModalActive, setEditChannelModalActive] = useState(false);
 
@@ -64,19 +62,8 @@ const ChannelList = () => {
     </svg>
   );
 
-  // const channelSettings = document.getElementById("editChannelModal");
-
   let newChannelBtn;
   let editChannelBtn;
-  // let editBtn;
-
-  // const openChannelEdit = () => {
-  //   if (!channelSettings?.classList.contains(style.channelSettingsBgActive)) {
-  //     console.log('made it to channel edit!!!');
-  //     channelSettings?.classList.add('channelSettingsBgActive');
-  //     <EditChannelModal />
-  //   }
-  // };
 
   if (+sessionUser?.id === +server?.owner_id) {
     newChannelBtn = (
@@ -90,8 +77,6 @@ const ChannelList = () => {
       </div>
     );
 
-    // let editBtn = document.getElementById(`channelEditBtn-${channelId}`);
-
     editChannelBtn = (
       <div
         id={`channelEditBtn-${channelId}`}
@@ -103,39 +88,6 @@ const ChannelList = () => {
       </div>
     );
   }
-
-  // function editServerFunc() {
-  //   return (
-  //     <>
-  //       <div
-  //         className={style.channelModalBackground}
-  //         onClick={() => setEditChannelModalActive(false)}
-  //       ></div>
-  //       <div id='channelModal' className={style.channelModalContainer}>
-  //         <div className={style.channelModalWrapper}>
-  //             <div className={style.newChannelModalHeading}>
-  //                 <h2>Edit Server</h2>
-  //             </div>
-  //             <EditServer setEditChannelModalActive={setEditChannelModalActive}/>
-  //           <div
-  //             className={style.channelsCloseModal}
-  //             onClick={() => setEditChannelModalActive(false)}
-  //           >
-  //             <svg
-  //               className={style.channelsCloseX}
-  //               aria-hidden="false"
-  //               width="24"
-  //               height="24"
-  //               viewBox="0 0 24 24"
-  //             >
-  //               <path d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
-  //             </svg>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-  // };
 
   function editChannelFunc() {
     return (

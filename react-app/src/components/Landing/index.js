@@ -13,7 +13,7 @@ export default function Landing() {
         <p className={style.landing_blurb}>
           ...where we can come together in a succinct and familiar way. Host a
           server and invite members, your friends, team or family; create
-          channels to stay orgainzed and enjoy direct messaging with other
+          channels to stay organized and enjoy direct messaging with other
           users.
         </p>
         <img className={style.title_background} src={title_background} alt="" />
