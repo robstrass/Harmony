@@ -8,9 +8,6 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./store/session";
-import * as serverActions from "./store/servers";
-import Servers from "./components/Main";
-import ChannelList from "./components/ChannelList";
 import Main from "./components/Main";
 import Landing from "./components/Landing";
 
@@ -19,7 +16,6 @@ function App() {
   const dispatch = useDispatch();
 
   const session = useSelector((state) => state.session);
-
 
   useEffect(() => {
     (async () => {
@@ -32,11 +28,10 @@ function App() {
     return null;
   }
 
-
   return (
     <BrowserRouter>
       <Route exact path="/">
-        {session.user && <Redirect to='/servers/@me'/>}
+        {session.user && <Redirect to="/servers/@me" />}
         <NavBar />
       </Route>
       <Switch>

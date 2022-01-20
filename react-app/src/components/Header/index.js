@@ -274,7 +274,7 @@ export default function Header({
         <div className={style.searchIcon} style={{ color }}>
           {searchVal ? xIcon : searchIcon}
         </div>
-        <Link to="/servers/info" className={style.help}>
+        <Link to="/servers/999999999/999999999/info" className={style.help}>
           {helpIcon}
         </Link>
       </div>

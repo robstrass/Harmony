@@ -1,0 +1,16 @@
+.main {
+  padding: 0 5vw;
+  font-family: Ginto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.main h1 {
+  color: white;
+}
+.main > div {
+  margin-bottom: 2rem;
+  width: 100%;
+  height: fit-content;
+}
+.main ul {
+  list-style: circle;
+  color: rgb(189, 189, 189);
+}

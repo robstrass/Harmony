@@ -9,7 +9,7 @@ import DMList from "../DirectMessages/dmlist";
 import arrow from "./assets/discord-arrow.svg";
 
 import CreateServer from "../CreateServer";
-import CreateChannel from "../CreateChannel";
+import Info from "../Info";
 import JoinServer from "../JoinServer";
 
 import Members from "../Members";
@@ -142,7 +142,6 @@ export default function Servers() {
 
   return (
     <main className={style.main}>
-      {/* {channelModalActive && addChannelFunc()} */}
       {serverActive && addServerFunc()}
       {createNewServer && (
         <CreateServer
@@ -183,6 +182,7 @@ export default function Servers() {
               "/servers/:serverId",
               "/servers/@me/:serverId/:channelId",
               "/servers/:serverId/:channelId",
+              "/servers/:serverId/:channelId/info",
             ]}
           >
             <Header
@@ -201,6 +201,9 @@ export default function Servers() {
           </Route>
           <Route exact path={"/servers/:serverId"}>
             <div></div>
+          </Route>
+          <Route exact path={"/servers/:serverId/:channelId/info"}>
+            <Info />
           </Route>
           <Route
             exact
@@ -222,6 +225,7 @@ export default function Servers() {
               "/servers/@me/:serverId",
               "/servers/:serverId",
               "/servers/:serverId/:channelId",
+              "/servers/:serverId/:channelId/info",
               "/servers/@me/:serverId/:channelId",
             ]}
           >
