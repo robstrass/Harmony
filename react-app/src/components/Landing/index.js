@@ -41,8 +41,12 @@ export default function Landing() {
             ...and if you are curious about what you see, check out the github
             repo here
           </p>
-          <a href={"https://github.com/nummyrice/Harmony-discord-clone.git"}>
-            <button className={style.github_repo}>Harmony-io on Github</button>
+          <a
+            href={"https://github.com/will-short/Harmony"}
+            target='_blank'
+            rel='noreferrer'
+          >
+            <button className={style.github_repo}>Harmony on Github</button>
           </a>
         </div>
       </div>
