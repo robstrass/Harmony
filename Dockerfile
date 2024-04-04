@@ -28,4 +28,4 @@ RUN pip install -r requirements.txt
 RUN pip install psycopg2
 
 # Run Flask migrations and seed data on container startup
-CMD flask db upgrade && flask seed all && gunicorn app:app
+CMD gunicorn app:app
